@@ -1,12 +1,13 @@
 package cn.majingjing.tm.ws.client;
 
+import org.junit.Before;
+import org.junit.Test;
+
 import cn.majingjing.tm.ws.web.HelloApi;
 import cn.majingjing.tm.ws.web.HelloApiService;
 import cn.majingjing.tm.ws.web.HelloBean;
 import cn.majingjing.tm.ws.web.QueryData;
 import cn.majingjing.tm.ws.web.QueryDataResponse;
-import org.junit.Before;
-import org.junit.Test;
 
 import javax.xml.ws.BindingProvider;
 import javax.xml.ws.handler.MessageContext;
@@ -23,24 +24,34 @@ import java.util.Map;
  *
  */
 public class Client {
+
 	HelloApi api;
 
 	@Before
 	public void before() {
-		HelloApiService service = null;
-		try {
-			service = new HelloApiService(new URL("http://127.0.0.1:8081/ws/HelloWs?wsdl"));
-			api = service.getHelloApiPort();
-			BindingProvider provider = (BindingProvider) api;
-			Map<String, Object> req_ctx = provider.getRequestContext();
-			Map<String, List<String>> headers = new HashMap<String, List<String>>();
-			headers.put("author",Collections.singletonList("皇太极"));
-			headers.put("aaa",Collections.singletonList("bbb"));
-			req_ctx.put(MessageContext.HTTP_REQUEST_HEADERS, headers);
-		} catch (MalformedURLException e) {
-			e.printStackTrace();
-		}
+		HelloApiService service = new HelloApiService();
+		api = service.getHelloApiPort();
 	}
+
+	/**
+	 * 自定义http头信息
+	 */
+//	@Before
+//	public void before() {
+//		HelloApiService service = null;
+//		try {
+//			service = new HelloApiService(new URL("http://127.0.0.1:8081/ws/HelloWs?wsdl"));
+//			api = service.getHelloApiPort();
+//			BindingProvider provider = (BindingProvider) api;
+//			Map<String, Object> req_ctx = provider.getRequestContext();
+//			Map<String, List<String>> headers = new HashMap<String, List<String>>();
+//			headers.put("author", Collections.singletonList("皇太极"));
+//			headers.put("aaa",Collections.singletonList("bbb"));
+//			req_ctx.put(MessageContext.HTTP_REQUEST_HEADERS, headers);
+//		} catch (MalformedURLException e) {
+//			e.printStackTrace();
+//		}
+//	}
 
 	@Test
 	public void hello1() {
