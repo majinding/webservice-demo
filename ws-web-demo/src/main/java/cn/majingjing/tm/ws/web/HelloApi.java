@@ -4,6 +4,7 @@ import javax.jws.HandlerChain;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
+import java.util.List;
 
 /**
  * 
@@ -22,6 +23,14 @@ public class HelloApi {
 	@WebMethod
 	public HelloBean hello2(HelloBean bean) {
 		bean.setName("欢迎：" + bean.getName());
+		return bean;
+	}
+
+	@WebMethod
+	public HelloBean hello3(List<HelloBean> ls) {
+		ls.stream().map(h -> h.getName() + "\t" + h.getId()).forEach(System.out::println);
+		HelloBean bean = new HelloBean();
+		bean.setName("欢迎：" +System.currentTimeMillis());
 		return bean;
 	}
 
