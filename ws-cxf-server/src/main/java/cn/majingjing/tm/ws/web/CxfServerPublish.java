@@ -22,7 +22,7 @@ public class CxfServerPublish {
         factory.setAddress("http://127.0.0.1:8080/ws/HelloWs");
         factory.setServiceBean(helloApi);
         factory.setInInterceptors(inInterceptors);
-        //factory.setOutInterceptors(outInterceptors);
+        factory.setOutInterceptors(outInterceptors);
         factory.create();
     }
 }

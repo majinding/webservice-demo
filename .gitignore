@@ -51,3 +51,10 @@
 /ws-web-demo/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF
 /ws-web-demo/target/m2e-wtp/web-resources/META-INF/maven/cn.majingjing.tm/ws-web-demo/pom.properties
 /ws-web-demo/target/m2e-wtp/web-resources/META-INF/maven/cn.majingjing.tm/ws-web-demo/pom.xml
+/ws-cxf-server/target
+/ws-xfire-client/target
+/ws-client/*.iml
+/ws-cxf-server/*.iml
+/ws-web-demo/*.iml
+/ws-wwather/*.iml
+/ws-xfire-client/*.iml

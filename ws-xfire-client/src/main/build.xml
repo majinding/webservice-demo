@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="XFire-WsGen" basedir="." default="jar">
+    <property name="src.dir" value="${basedir}/src"/>
+    <property name="lib.dir" value="${basedir}/lib"/>
+    <property name="output.dir" value="${basedir}/output"/>
+    <property name="wsdl.dir" value="http://127.0.0.1:8080/ws/HelloWs?wsdl"/>
+    <property name="package.dir" value="cn.majingjing.xfire"/>
+    <property name="jar.file" value="${output.dir}/tm-xfire.jar"/>
+    <path id="mypath">
+        <fileset file="${lib.dir}/*.jar">
+            <include name="*.jar"/>
+        </fileset>
+    </path>
+    <target name="clean">
+        <delete includeEmptyDirs="true">
+            <fileset dir="${src.dir}" includes="**/*" defaultexcludes="no"/>
+        </delete>
+        <delete dir="${output.dir}"/>
+    </target>
+    <target name="init" depends="clean">
+        <mkdir dir="${output.dir}"/>
+    </target>
+    <taskdef name="wsgen" classname="org.codehaus.xfire.gen.WsGenTask" classpathref="mypath"></taskdef>
+    <target name="wsgen" depends="init">
+        <taskdef name='WsGenTask' classname="org.codehaus.xfire.gen.WsGenTask" classpathref="mypath"/>
+        <WsGenTask outputDirectory="${src.dir}" wsdl="${wsdl.dir}" package="${package.dir}" overwrite="true"/>
+    </target>
+    <target name="compile" depends="wsgen">
+        <copy todir="${output.dir}/classes/META-INF">
+            <fileset dir="${src.dir}/META-INF"/>
+        </copy>
+        <javac srcdir="${src.dir}" destdir="${output.dir}/classes" debug="true" failonerror="true"
+               classpathref="mypath"/>
+    </target>
+    <target name="jar" depends="compile">
+        <jar destfile="${jar.file}" basedir="${output.dir}/classes"></jar>
+    </target>
+</project>
