@@ -18,6 +18,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * 自定义soap-header信息，完成认证请求
+ */
 public class MyClient3 {
 
     HelloPortImpl api;

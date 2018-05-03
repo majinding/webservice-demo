@@ -1,6 +1,5 @@
 package cn.majingjing.tm.blog.webservice.api;
 
-import javax.xml.bind.DatatypeConverter;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -27,6 +26,7 @@ public class WsHttpClient {
             URL realUrl = new URL(url);
             // 打开和URL之间的连接
             URLConnection conn = realUrl.openConnection();
+
             // 设置通用的请求属性
 
 //            Accept-Encoding: gzip,deflate
@@ -42,9 +42,10 @@ public class WsHttpClient {
 
             conn.setRequestProperty("Accept-Encoding", "gzip,deflate");
             conn.setRequestProperty("Content-Type", "text/xml;charset=UTF-8");
-//            conn.setRequestProperty("SOAPAction",
-//                    "urn:sap-com:document:sap:rfc:functions:ZSIIS_GET_USERNAME:ZFM_GET_USERNAMERequest");
-            conn.setRequestProperty("Authorization", "Basic aaaaaaaaaaaaaaa3Nv");
+//            conn.setRequestProperty("SOAPAction", "uxxxxxxxxxxxxxxxxxx");
+//            String Authorization = DatatypeConverter.printBase64Binary("aaa:bbb".getBytes("UTF-8"));
+//            System.out.println(Authorization);
+//            conn.setRequestProperty("Authorization", "Basic aaaaaaaaaaaaaaa3Nv");
 
 
             // 发送POST请求必须设置如下两行
@@ -56,6 +57,7 @@ public class WsHttpClient {
             out.print(param);
             // flush输出流的缓冲
             out.flush();
+
             // 定义BufferedReader输入流来读取URL的响应
             in = new BufferedReader(
                     new InputStreamReader(conn.getInputStream()));
@@ -100,9 +102,7 @@ public class WsHttpClient {
 
         String sr= WsHttpClient.sendPost(url, xml);
         System.out.println(sr);
-        String encoding = DatatypeConverter.printBase64Binary("aaa:bbb".getBytes("UTF-8"));
-        System.out.println(encoding);
 
-            //conn.setRequestProperty("Authorization", "Basic emlmX3NzbzpzeWlmc3Nv");
+
     }
 }
