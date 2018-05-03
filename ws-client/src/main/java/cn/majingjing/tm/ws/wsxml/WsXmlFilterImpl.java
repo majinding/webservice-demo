@@ -5,6 +5,7 @@ import org.xml.sax.SAXException;
 import org.xml.sax.helpers.XMLFilterImpl;
 
 /**
+ * 处理命名空间
  * Created by Jingjing.Ma on 2018/5/3 11:34
  */
 public class WsXmlFilterImpl extends XMLFilterImpl {
