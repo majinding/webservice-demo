@@ -58,3 +58,10 @@
 /ws-web-demo/*.iml
 /ws-wwather/*.iml
 /ws-xfire-client/*.iml
+/ws-cxf-server-spring/target
+/ws-cxf-server-spring/ws-cxf-server-spring.iml
+/ws-cxf-server-spring/ws-spring.iml
+/ws-jws-server-spring/target
+/ws-jws-server-spring/ws-jax-server-spring.iml
+/ws-jws-server-spring/ws-jws-server-spring.iml
+/ws-client/target

@@ -31,20 +31,20 @@ public class WsHttpClient {
 
 //            Accept-Encoding: gzip,deflate
 //            Content-Type: text/xml;charset=UTF-8
-//            SOAPAction: "urn:sap-com:document:sap:rfc:functions:ZSIIS_GET_USERNAME:ZFM_GET_USERNAMERequest"
+//            SOAPAction: "xxxxxxxxxxxxxxxxxx"
 //            Content-Length: 293
 //            Host: 127.0.0.1:8888
 //            Connection: Keep-Alive
 //            User-Agent: Apache-HttpClient/4.1.1 (java 1.5)
 //            Cookie: sap-usercontext=sap-client=300
 //            Cookie2: $Version=1
-//            Authorization: Basic emlmX3NzbzpzeWlmc3Nv
+//            Authorization: Basic aaaaaaaaaaaaaaa3Nv
 
             conn.setRequestProperty("Accept-Encoding", "gzip,deflate");
             conn.setRequestProperty("Content-Type", "text/xml;charset=UTF-8");
 //            conn.setRequestProperty("SOAPAction",
 //                    "urn:sap-com:document:sap:rfc:functions:ZSIIS_GET_USERNAME:ZFM_GET_USERNAMERequest");
-            conn.setRequestProperty("Authorization", "Basic emlmX3NzbzpzeWlmc3Nv");
+            conn.setRequestProperty("Authorization", "Basic aaaaaaaaaaaaaaa3Nv");
 
 
             // 发送POST请求必须设置如下两行
@@ -100,7 +100,7 @@ public class WsHttpClient {
 
         String sr= WsHttpClient.sendPost(url, xml);
         System.out.println(sr);
-        String encoding = DatatypeConverter.printBase64Binary("zif_sso:syifsso".getBytes("UTF-8"));
+        String encoding = DatatypeConverter.printBase64Binary("aaa:bbb".getBytes("UTF-8"));
         System.out.println(encoding);
 
             //conn.setRequestProperty("Authorization", "Basic emlmX3NzbzpzeWlmc3Nv");
