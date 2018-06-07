@@ -14,4 +14,11 @@
             <bean class="cn.majingjing.tm.ws.web.HelloApi"></bean>
         </jaxws:serviceBean>
     </jaxws:server>
+
+
+    <bean id="author" class="cn.majingjing.tm.ws.web.springbean.Author"></bean>
+    <bean id="RefBeanApi" class="cn.majingjing.tm.ws.web.RefBeanApi">
+        <property name="author" ref="author"></property>
+    </bean>
+    <jaxws:endpoint id="helloWorld" implementor="#RefBeanApi" address="/HelloWorld"/>
 </beans>
