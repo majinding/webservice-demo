@@ -2,11 +2,14 @@
 <beans
         xmlns="http://www.springframework.org/schema/beans"
         xmlns:jaxws="http://cxf.apache.org/jaxws"
+        xmlns:context="http://www.springframework.org/schema/context"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
     http://cxf.apache.org/jaxws
     http://cxf.apache.org/schemas/jaxws.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
     ">
     <jaxws:server address="/HelloWs"
                   serviceClass="cn.majingjing.tm.ws.web.IHelloApi">
@@ -21,4 +24,8 @@
         <property name="author" ref="author"></property>
     </bean>
     <jaxws:endpoint id="helloWorld" implementor="#RefBeanApi" address="/HelloWorld"/>
+
+
+    <context:component-scan base-package="cn.majingjing"></context:component-scan>
+    <jaxws:endpoint id="helloWorld2" implementor="#RefBean2Api" address="/HelloWorld2"/>
 </beans>

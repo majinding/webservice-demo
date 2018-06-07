@@ -30,7 +30,7 @@ public class HelloApi implements IHelloApi {
 	@Override
 	@WebMethod
 	public HelloBean hello3(List<HelloBean> ls) {
-		ls.stream().map(h -> h.getName() + "\t" + h.getId()).forEach(System.out::println);
+		//ls.stream().map(h -> h.getName() + "\t" + h.getId()).forEach(System.out::println);
 		HelloBean bean = new HelloBean();
 		bean.setName("欢迎：" +System.currentTimeMillis());
 		return bean;
