@@ -16,4 +16,15 @@
             <ws:service bean="#HelloApi"/>
         </wss:service>
     </wss:binding>
+
+
+    <bean id="author" class="cn.majingjing.tm.ws.web.springbean.Author"></bean>
+    <bean id="refBeanApi" class="cn.majingjing.tm.ws.web.RefBeanApi">
+        <property name="author" ref="author"></property>
+    </bean>
+    <wss:binding url="/ws/refbean">
+        <wss:service>
+            <ws:service bean="#refBeanApi"/>
+        </wss:service>
+    </wss:binding>
 </beans>
