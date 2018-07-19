@@ -124,6 +124,29 @@
             <artifactId>httpcore</artifactId>
             <version>4.4.1</version>
         </dependency>
+
+
+
+        <!-- https://mvnrepository.com/artifact/javax.xml/jaxrpc -->
+        <dependency>
+            <groupId>javax.xml</groupId>
+            <artifactId>jaxrpc</artifactId>
+            <version>1.1</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.sun.xml.rpc/jaxrpc-impl -->
+        <dependency>
+            <groupId>com.sun.xml.rpc</groupId>
+            <artifactId>jaxrpc-impl</artifactId>
+            <version>1.1.3_01</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/javax.mail/mail -->
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+            <version>1.4.7</version>
+        </dependency>
+
+
     </dependencies>
     <build>
         <plugins>
