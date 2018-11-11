@@ -1,2 +1,3 @@
 com/mycompany/hr/config/MyPayloadLoggingInterceptor.class
 com/mycompany/hr/ws/HolidayEndpoint.class
+com/mycompany/hr/ws/Demo1Endpoint.class

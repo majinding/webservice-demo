@@ -1,44 +1,37 @@
-package cn.majingjing.tm.ws.web;
-
-import java.util.Date;
+package sg;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
+
+import java.util.Date;
 
 /**
  * 
  * @author JingjingMa
  * @date 2017-11-29
  */
-@XStreamAlias("HelloBean")
-public class HelloBean {
+@XStreamAlias("Send_Address")
+public class SendAddress {
 
-	private Integer id;
-	private String name;
-	@XStreamAlias("nowTime")
-	private Date time;
+	@XStreamAlias("DeviceType")
+	private String deviceType;
 
-	public Integer getId() {
-		return id;
+	@XStreamAlias("DeviceID")
+	private String deviceID;
+
+
+	public String getDeviceType() {
+		return deviceType;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public void setDeviceType(String deviceType) {
+		this.deviceType = deviceType;
 	}
 
-	public String getName() {
-		return name;
+	public String getDeviceID() {
+		return deviceID;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setDeviceID(String deviceID) {
+		this.deviceID = deviceID;
 	}
-
-	public Date getTime() {
-		return time;
-	}
-
-	public void setTime(Date time) {
-		this.time = time;
-	}
-
 }

@@ -16,6 +16,14 @@
                       targetNamespace="http://mycompany.com/hr/definitions">
         <sws:xsd location="/WEB-INF/hr.xsd"/>
     </sws:dynamic-wsdl>
+
+    <sws:dynamic-wsdl id="demo1"
+                      portTypeName="demo1Port"
+                      locationUri="/demo1Service/"
+                      targetNamespace="http://mycompany.com/demo1/definitions">
+        <sws:xsd location="/WEB-INF/demo1.xsd"/>
+    </sws:dynamic-wsdl>
+
     <sws:interceptors>
         <bean class="com.mycompany.hr.config.MyPayloadLoggingInterceptor"></bean>
     </sws:interceptors>
