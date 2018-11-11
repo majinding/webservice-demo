@@ -65,3 +65,4 @@
 /ws-jws-server-spring/ws-jax-server-spring.iml
 /ws-jws-server-spring/ws-jws-server-spring.iml
 /ws-client/target
+*.class
