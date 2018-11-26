@@ -13,7 +13,9 @@ import java.io.StringReader;
 /**
  * webservice-xml解析
  * Created by Jingjing.Ma on 2018/5/3 11:02
+ * @see cn.majingjing.tm.ws.util.WsXmlUtils
  */
+@Deprecated
 public class WsXmlUtil {
 
     public static <T> T toObject(Class<T> valueType, String xml) {
