@@ -6,8 +6,10 @@ package cn.majingjing.tm.blog.webservice.api;
  * This class is not complete
  */
 
+import com.baidu.MyHttpHeaderSoapInterceptor;
 import org.apache.cxf.endpoint.Client;
 import org.apache.cxf.frontend.ClientProxy;
+import org.apache.cxf.interceptor.LoggingOutInterceptor;
 import org.apache.cxf.transport.http.HTTPConduit;
 import org.apache.cxf.transports.http.configuration.HTTPClientPolicy;
 
@@ -50,12 +52,16 @@ public final class HelloPortImpl_HelloPortImplPort_Client {
 //*****************************************************************
         // 连接参数设定
         Client proxy = ClientProxy.getClient(port);
+        proxy.getOutInterceptors().add(new MyHttpHeaderSoapInterceptor());
+        proxy.getOutInterceptors().add(new LoggingOutInterceptor());
+
         HTTPConduit conduit = (HTTPConduit) proxy.getConduit();
         HTTPClientPolicy policy = new HTTPClientPolicy();
         // 连接超时时间
-        policy.setConnectionTimeout(10);
+        policy.setConnectionTimeout(100000);
         // 请求超时时间
-        policy.setReceiveTimeout(10);
+        policy.setReceiveTimeout(100000);
+
         conduit.setClient(policy);
 //*****************************************************************
 
