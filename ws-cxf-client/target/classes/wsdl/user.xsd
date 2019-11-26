@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+		targetNamespace="http://service.zttc.edu.cn"
+		xmlns:tns="http://service.zttc.edu.cn" 
+		elementFormDefault="qualified">
+		
+	<xsd:element name="list" type="tns:list"></xsd:element>
+	<xsd:element name="listResponse" type="tns:listResponse"></xsd:element>
+	<xsd:element name="UserException" type="tns:UserException"></xsd:element>
+	<xsd:element name="licenceInfo" type="tns:licenceInfo"></xsd:element>
+
+
+	<xsd:complexType name="licenceInfo">
+		<xsd:sequence>
+			<xsd:element name="registerUser" type="tns:user"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="UserException">
+		<xsd:sequence>
+			<xsd:element name="message" type="xsd:string"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	
+	<xsd:complexType name="list">
+		<xsd:sequence/>
+	</xsd:complexType>
+	<xsd:complexType name="listResponse">
+		<xsd:sequence minOccurs="1" maxOccurs="unbounded">
+			<xsd:element name="user" type="tns:user"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+
+	
+	<xsd:complexType name="user">
+		<xsd:sequence>
+			<xsd:element name="username" type="xsd:string"/>
+			<xsd:element name="password" type="xsd:string"/>
+			<xsd:element name="nickname" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+</xsd:schema>

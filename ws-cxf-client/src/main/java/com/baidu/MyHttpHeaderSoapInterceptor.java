@@ -9,7 +9,6 @@ import org.apache.cxf.phase.Phase;
 import java.net.HttpURLConnection;
 import java.util.ArrayList;
 import java.util.Map;
-import java.util.TreeMap;
 
 /**
  * @Author JingjingMa

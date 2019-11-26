@@ -30,7 +30,7 @@ public class HelloPortImplService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://www.majingjing.cn:7070/tmblog/webservice/hellodemo?wsdl");
+            url = new URL("http://majingjing.cn:9992/tmblog/webservice/hellodemo?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

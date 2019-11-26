@@ -7,8 +7,7 @@ wsdl2java -client https://www.majingjing.cn/tmblog/webservice/hellodemo?wsdl
 
 设置超时时间
 ```java
-
-// 连接参数设定
+ //连接参数设定
 Client proxy = ClientProxy.getClient(port);
 HTTPConduit conduit = (HTTPConduit) proxy.getConduit();
 HTTPClientPolicy policy = new HTTPClientPolicy();

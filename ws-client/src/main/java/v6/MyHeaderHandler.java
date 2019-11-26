@@ -1,4 +1,4 @@
-package cn.majingjing.tm.ws.handler;
+package v6;
 
 import javax.xml.namespace.QName;
 import javax.xml.soap.*;
@@ -10,6 +10,7 @@ import java.util.Set;
 /**
  * Created by Jingjing.Ma on 2018/5/3 9:40
  */
+@SuppressWarnings("all")
 public class MyHeaderHandler implements SOAPHandler<SOAPMessageContext> {
 
     public boolean handleMessage(SOAPMessageContext ctx) {
@@ -35,21 +36,27 @@ public class MyHeaderHandler implements SOAPHandler<SOAPMessageContext> {
                     hdr = env.addHeader();
                 }
 
-                QName name = new QName("http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd", "Security", "wsse");
-                SOAPHeaderElement header = hdr.addHeaderElement(name);
-
-                SOAPElement UsernameToken = header.addChildElement("UsernameToken", "wsse");
-
-                SOAPElement userElement = UsernameToken.addChildElement("Username", "wsse");
-                userElement.addTextNode("bps");
-                SOAPElement passElement = UsernameToken.addChildElement("Password", "wsse");
-                passElement.addTextNode("000000");
-
-                QName name2 = new QName("http://www.primeton.com/BPS", "Header", "bps");
+   //               <soapenv:Header>
+   //    <soap:ESBSecurityToken>
+   //       <!--Optional:-->
+   //       <soap:username>IEMPAdmin</soap:username>
+   //       <!--Optional:-->
+   //       <soap:password>111111</soap:password>
+   //       <!--Optional:-->
+   //       <soap:timestamp>2019-09-01T19:08:02</soap:timestamp>
+   //    </soap:ESBSecurityToken>
+   // </soapenv:Header>
+                QName name2 = new QName("http://www.primeton.com/BPS", "ESBSecurityToken", "soap");
                 SOAPHeaderElement header2 = hdr.addHeaderElement(name2);
 
-                SOAPElement tenantID = header2.addChildElement("TenantID", "bps");
-                tenantID.addTextNode("tenantID");
+                SOAPElement username = header2.addChildElement("username", "soap");
+                username.addTextNode("a");
+
+                SOAPElement password = header2.addChildElement("password", "soap");
+                password.addTextNode("b");
+
+                SOAPElement timestamp = header2.addChildElement("timestamp", "soap");
+                timestamp.addTextNode("c");
 
                 msg.saveChanges();
                 return true;

@@ -1,0 +1,455 @@
+<wsdl:definitions xmlns:tns="http://hodielog.com.br/" targetNamespace="http://hodielog.com.br/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+    <wsdl:types>
+        <s:schema targetNamespace="http://hodielog.com.br/">
+            <s:complexType name="ArrayOfItem">
+                <s:annotation>
+                    <s:documentation>
+                        This is how to define a OrderData Data
+                    </s:documentation>
+                </s:annotation>
+                <s:sequence>
+                    <s:element minOccurs="1" maxOccurs="10" nillable="true" name="cItem" type="tns:Item">
+                        <s:annotation>
+                            <s:documentation>
+                                A Item element
+                            </s:documentation>
+                        </s:annotation>
+                    </s:element>
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="Item">
+                <s:annotation>
+                    <s:documentation>
+                        A complex type describing the Product
+                    </s:documentation>
+                </s:annotation>
+                <s:sequence>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="StringId" type="s:string">
+                        <s:annotation>
+                            <s:documentation>
+                                A String with a ID
+                            </s:documentation>
+                        </s:annotation>
+                    </s:element>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="StringNome" type="s:string">
+                        <s:annotation>
+                            <s:documentation>
+                                A String with a Recipient's Name
+                            </s:documentation>
+                        </s:annotation>
+                    </s:element>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="StringLogradouro" type="s:string">
+                        <s:annotation>
+                            <s:documentation>
+                                A String with a Recipient's Street
+                            </s:documentation>
+                        </s:annotation>
+                    </s:element>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="StringNumero" type="s:string">
+                        <s:annotation>
+                            <s:documentation>
+                                A String with a Recipient's Number
+                            </s:documentation>
+                        </s:annotation>
+                    </s:element>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="StringComplemento" type="s:string">
+                        <s:annotation>
+                            <s:documentation>
+                                A String with a Recipient's address complement
+                            </s:documentation>
+                        </s:annotation>
+                    </s:element>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="StringBairro" type="s:string">
+                        <s:annotation>
+                            <s:documentation>
+                                A String with a Recipient's neighborhood
+                            </s:documentation>
+                        </s:annotation>
+                    </s:element>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="StringCidade" type="s:string">
+                        <s:annotation>
+                            <s:documentation>
+                                A String with a Recipient's City
+                            </s:documentation>
+                        </s:annotation>
+                    </s:element>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="StringUf" type="s:string">
+                        <s:annotation>
+                            <s:documentation>
+                                A String with a Recipient's District (XX)
+                            </s:documentation>
+                        </s:annotation>
+                    </s:element>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="StringCep" type="s:string">
+                        <s:annotation>
+                            <s:documentation>
+                                A String with a Recipient's Zip code
+                            </s:documentation>
+                        </s:annotation>
+                    </s:element>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="StringCpf" type="s:string">
+                        <s:annotation>
+                            <s:documentation>
+                                A String with a Recipient's TaxID
+                            </s:documentation>
+                        </s:annotation>
+                    </s:element>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="StringCnpj" type="s:string">
+                        <s:annotation>
+                            <s:documentation>
+                                A String with a Recipient's TaxID Companies
+                            </s:documentation>
+                        </s:annotation>
+                    </s:element>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="StringTelefone" type="s:string">
+                        <s:annotation>
+                            <s:documentation>
+                                A String with a Recipient's Phones
+                            </s:documentation>
+                        </s:annotation>
+                    </s:element>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="StringCelular" type="s:string">
+                        <s:annotation>
+                            <s:documentation>
+                                A String with a Recipient's Cell Phone
+                            </s:documentation>
+                        </s:annotation>
+                    </s:element>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="StringEmail" type="s:string">
+                        <s:annotation>
+                            <s:documentation>
+                                A String with a Recipient's Email
+                            </s:documentation>
+                        </s:annotation>
+                    </s:element>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="StringPedido" type="s:string">
+                        <s:annotation>
+                            <s:documentation>
+                                A String with a Recipient's Order
+                            </s:documentation>
+                        </s:annotation>
+                    </s:element>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="StringNf" type="s:string">
+                        <s:annotation>
+                            <s:documentation>
+                                A String with a Recipient's invoice
+                            </s:documentation>
+                        </s:annotation>
+                    </s:element>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="StringValorFrete" type="s:string">
+                        <s:annotation>
+                            <s:documentation>
+                                A String with a Cost of freight
+                            </s:documentation>
+                        </s:annotation>
+                    </s:element>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="StringValorProduto" type="s:string">
+                        <s:annotation>
+                            <s:documentation>
+                                A String with a Cost of all Products
+                            </s:documentation>
+                        </s:annotation>
+                    </s:element>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="StringPais" type="s:string">
+                        <s:annotation>
+                            <s:documentation>
+                                A String with a country
+                            </s:documentation>
+                        </s:annotation>
+                    </s:element>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="StringRemetenteNome" type="s:string">
+                        <s:annotation>
+                            <s:documentation>
+                                A String with a Sender's Name
+                            </s:documentation>
+                        </s:annotation>
+                    </s:element>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="StringRemetenteLogradouro" type="s:string">
+                        <s:annotation>
+                            <s:documentation>
+                                A String with a Sender's Street
+                            </s:documentation>
+                        </s:annotation>
+                    </s:element>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="StringRemetenteNumero" type="s:string">
+                        <s:annotation>
+                            <s:documentation>
+                                A String with a Sender's Number
+                            </s:documentation>
+                        </s:annotation>
+                    </s:element>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="StringRemetenteComplemento" type="s:string">
+                        <s:annotation>
+                            <s:documentation>
+                                A String with a Sender's  address complement
+                            </s:documentation>
+                        </s:annotation>
+                    </s:element>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="StringRemetenteBairro" type="s:string">
+                        <s:annotation>
+                            <s:documentation>
+                                A String with a Sender's neighborhood
+                            </s:documentation>
+                        </s:annotation>
+                    </s:element>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="StringRemetenteCidade" type="s:string">
+                        <s:annotation>
+                            <s:documentation>
+                                A String with a Sender's City
+                            </s:documentation>
+                        </s:annotation>
+                    </s:element>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="StringRemetenteUF" type="s:string">
+                        <s:annotation>
+                            <s:documentation>
+                                A String with a Sender's District (XX)
+                            </s:documentation>
+                        </s:annotation>
+                    </s:element>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="StringRemetenteCEP" type="s:string">
+                        <s:annotation>
+                            <s:documentation>
+                                A String with a Sender's Zip code
+                            </s:documentation>
+                        </s:annotation>
+                    </s:element>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="StringRemetentePais" type="s:string">
+                        <s:annotation>
+                            <s:documentation>
+                                A String with a Sender's country
+                            </s:documentation>
+                        </s:annotation>
+                    </s:element>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="StringRemetenteCPF" type="s:string">
+                        <s:annotation>
+                            <s:documentation>
+                                A String with a Sender's TaxID
+                            </s:documentation>
+                        </s:annotation>
+                    </s:element>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="StringRemetenteCNPJ" type="s:string">
+                        <s:annotation>
+                            <s:documentation>
+                                A String with a Sender's TaxID Companies
+                            </s:documentation>
+                        </s:annotation>
+                    </s:element>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="StringRemetenteEmail" type="s:string">
+                        <s:annotation>
+                            <s:documentation>
+                                A String with a Sender's email
+                            </s:documentation>
+                        </s:annotation>
+                    </s:element>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="StringRemetenteTelefone" type="s:string">
+                        <s:annotation>
+                            <s:documentation>
+                                A String with a Sender's Phone
+                            </s:documentation>
+                        </s:annotation>
+                    </s:element>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="StringRemetenteCelular" type="s:string">
+                        <s:annotation>
+                            <s:documentation>
+                                A String with a Sender's Cell Phone
+                            </s:documentation>
+                        </s:annotation>
+                    </s:element>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="StringPeso" type="s:string">
+                        <s:annotation>
+                            <s:documentation>
+                                A String with a Weight
+                            </s:documentation>
+                        </s:annotation>
+                    </s:element>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="StringLargura" type="s:string">
+                        <s:annotation>
+                            <s:documentation>
+                                A String with a Width
+                            </s:documentation>
+                        </s:annotation>
+                    </s:element>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="StringAltura" type="s:string">
+                        <s:annotation>
+                            <s:documentation>
+                                A String with a Height
+                            </s:documentation>
+                        </s:annotation>
+                    </s:element>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="StringComprimento" type="s:string">
+                        <s:annotation>
+                            <s:documentation>
+                                A String with a Length
+                            </s:documentation>
+                        </s:annotation>
+                    </s:element>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="StringDepartamento" type="s:string">
+                        <s:annotation>
+                            <s:documentation>
+                                A String with a Client
+                            </s:documentation>
+                        </s:annotation>
+                    </s:element>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="StringSecurityPrice" type="s:string">
+                        <s:annotation>
+                            <s:documentation>
+                                A String with a SecurityPrice
+                            </s:documentation>
+                        </s:annotation>
+                    </s:element>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="StringMKTPlaceName" type="s:string">
+                        <s:annotation>
+                            <s:documentation>
+                                A String with a MKT Place Name
+                            </s:documentation>
+                        </s:annotation>
+                    </s:element>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="StringService" type="s:string">
+                        <s:annotation>
+                            <s:documentation>
+                                A String with a Service code
+                            </s:documentation>
+                        </s:annotation>
+                    </s:element>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="StringBag" type="s:string">
+                        <s:annotation>
+                            <s:documentation>
+                                A String with a Bag Number
+                            </s:documentation>
+                        </s:annotation>
+                    </s:element>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="StringCarry" type="s:string">
+                        <s:annotation>
+                            <s:documentation>
+                                A String with a Carry Number
+                            </s:documentation>
+                        </s:annotation>
+                    </s:element>
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="ReturnData">
+                <s:annotation>
+                    <s:documentation>
+                        A complex type describing the return Data
+                    </s:documentation>
+                </s:annotation>
+                <s:sequence>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="false" name="BolleanOK" type="s:boolean">
+                        <s:annotation>
+                            <s:documentation>
+                                A bool with a value of operation success
+                            </s:documentation>
+                        </s:annotation>
+                    </s:element>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="ItemItens" type="tns:ArrayOfItem">
+                        <s:annotation>
+                            <s:documentation>
+                                A HEX String with a return process
+                            </s:documentation>
+                        </s:annotation>
+                    </s:element>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="StringErrorMsg" type="s:string">
+                        <s:annotation>
+                            <s:documentation>
+                                A String with a erro message value
+                            </s:documentation>
+                        </s:annotation>
+                    </s:element>
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="SoapFault">
+                <s:annotation>
+                    <s:documentation>
+                        This is the exception type for all methods
+                    </s:documentation>
+                </s:annotation>
+                <s:sequence>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="message" type="s:string">
+                        <s:annotation>
+                            <s:documentation>
+                                The message
+                            </s:documentation>
+                        </s:annotation>
+                    </s:element>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="false" name="code" type="s:int">
+                        <s:annotation>
+                            <s:documentation>
+                                The code
+                            </s:documentation>
+                        </s:annotation>
+                    </s:element>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="file" type="s:string">
+                        <s:annotation>
+                            <s:documentation>
+                                The file name
+                            </s:documentation>
+                        </s:annotation>
+                    </s:element>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="false" name="line" type="s:int">
+                        <s:annotation>
+                            <s:documentation>
+                                The line number
+                            </s:documentation>
+                        </s:annotation>
+                    </s:element>
+                </s:sequence>
+            </s:complexType>
+        </s:schema>
+    </wsdl:types>
+    <wsdl:message name="shipmentsSoapIn">
+        <wsdl:part name="shipmentDate" type="s:string">
+            <s:documentation>
+                The object (YYYY-mm-dd)
+            </s:documentation>
+        </wsdl:part>
+        <wsdl:part name="user" type="s:string">
+            <s:documentation>
+                The string
+            </s:documentation>
+        </wsdl:part>
+        <wsdl:part name="pass" type="s:string">
+            <s:documentation>
+                The String
+            </s:documentation>
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="shipmentsSoapOut">
+        <wsdl:part name="return" type="tns:ReturnData">
+            <s:documentation>
+                The result of process
+            </s:documentation>
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="shipmentsException">
+        <wsdl:part name="fault" type="tns:SoapFault" />
+    </wsdl:message>
+    <wsdl:portType name="SoapHodieSoap">
+        <wsdl:operation name="shipments" parameterOrder="shipmentDate user pass">
+            <wsdl:documentation>
+                Get shipments data from the HODIE system
+            </wsdl:documentation>
+            <wsdl:input message="tns:shipmentsSoapIn" />
+            <wsdl:output message="tns:shipmentsSoapOut" />
+            
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="SoapHodieSoap" type="tns:SoapHodieSoap">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+        <wsdl:operation name="shipments">
+            <soap:operation soapAction="http://hodielog.com.br/shipments" />
+            <wsdl:input>
+                <soap:body use="literal"
+                  namespace="http://hodielog.com.br/" parts="shipmentDate user pass" />
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" namespace="http://hodielog.com.br/" parts="return" />
+            </wsdl:output>
+            
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="SoapHodie">
+        <wsdl:port name="SoapHodieSoap" binding="tns:SoapHodieSoap">
+            <soap:address location="http://127.0.0.1:9999/hodiewsR.php" />
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
